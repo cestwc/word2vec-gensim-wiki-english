@@ -57,5 +57,8 @@ phrases = Phrases(dataset, threshold=1, min_count=1)
 # Export a FrozenPhrases object that is more efficient but doesn't allow further training.
 frozen_phrases = phrases.freeze()
 frozen_phrases.save('frozen_phrases')
+
+# test it
+print(frozen_phrases['For example, this is a sentence for you to test it out'])
 ```
 see [here](https://radimrehurek.com/gensim/models/phrases.html) for more details on training phrases.
