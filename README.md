@@ -43,5 +43,5 @@ dataset = IterableWrapper(wiki)
 model = Word2Vec(dataset, size=128, window=15, iter=50, sg=1, min_count=150)
 model.save("word2vec-wiki.model")
 model.wv.save_word2vec_format('word2vec-wiki.txt')
-model.wv.most_similar('cat')
+print(model.wv.most_similar('cat'))
 ```
