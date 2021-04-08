@@ -20,7 +20,7 @@ from gensim.models import Word2Vec
 
 wiki = api.load("wiki-english-20171001")
 ```
-The key idea is here, you wrap the dataset in a way that a model from [gensim](https://pypi.org/project/gensim/) can handle
+The **key idea is HERE!** you wrap the dataset in a way that a model from [gensim](https://pypi.org/project/gensim/) can handle
 ```python
 def f(a):
     # The function I want to apply to everything
