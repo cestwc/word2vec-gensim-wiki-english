@@ -45,3 +45,17 @@ model.save("word2vec-wiki.model")
 model.wv.save_word2vec_format('word2vec-wiki.txt')
 print(model.wv.most_similar('cat'))
 ```
+
+### Some other usage
+If you feel like training a ```Phrases``` model from this wiki-english dataset, the usage will be like
+```python
+from gensim.models.phrases import Phrases, ENGLISH_CONNECTOR_WORDS
+
+dataset = IterableWrapper(wiki)
+phrases = Phrases(dataset, threshold=1, min_count=1)
+
+# Export a FrozenPhrases object that is more efficient but doesn't allow further training.
+frozen_phrases = phrases.freeze()
+frozen_phrases.save('frozen_phrases')
+```
+see [here](https://radimrehurek.com/gensim/models/phrases.html) for more details on training phrases.
